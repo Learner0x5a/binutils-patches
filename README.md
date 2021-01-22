@@ -12,3 +12,6 @@ gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04)
 
 GNU C Library (Ubuntu GLIBC 2.27-3ubuntu1.2) stable release version 2.27
 
+# configure
+
+./configure --disable-gdb --disable-sim --disable-readline --disable-gdbserver --disable-werror
