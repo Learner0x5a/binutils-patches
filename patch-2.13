@@ -1,0 +1,22 @@
+--- binutils-2.13/gas/config/tc-i386.c	2002-07-12 03:47:36.000000000 +0000
++++ binutils-2.13/gas/config/tc-i386.c.new	2021-01-22 05:28:48.523641090 +0000
+@@ -356,7 +356,7 @@
+    prefix), and doesn't work, unless the destination is in the bottom
+    64k of the code segment (The top 16 bits of eip are zeroed).  */
+ 
+-const relax_typeS md_relax_table[] =
++const relax_typeS *md_relax_table =
+ {
+   /* The fields are:
+      1) most positive reach of this state,
+--- binutils-2.13/gas/config/tc-i386.h	2002-07-09 09:46:18.000000000 +0000
++++ binutils-2.13/gas/config/tc-i386.h.new	2021-01-22 05:32:23.128237192 +0000
+@@ -520,7 +520,7 @@
+ 
+ #define md_operand(x)
+ 
+-extern const struct relax_type md_relax_table[];
++extern const struct relax_type *md_relax_table;
+ #define TC_GENERIC_RELAX_TABLE md_relax_table
+ 
+ #define md_do_align(n, fill, len, max, around)				\
